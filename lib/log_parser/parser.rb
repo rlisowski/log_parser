@@ -11,6 +11,7 @@ module LogParser
 
     def call
       Database.load!
+      Feeder.load!(path)
     rescue Error => e
       Logger.error e.message
     end

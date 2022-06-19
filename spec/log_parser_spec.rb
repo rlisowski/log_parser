@@ -5,7 +5,7 @@ require "spec_helper"
 RSpec.describe LogParser do
   subject(:parser) { LogParser.parse(path) }
 
-  xcontext "missing file" do
+  context "missing file" do
     let(:path) { "asd.log" }
 
     it "complains" do
@@ -13,7 +13,7 @@ RSpec.describe LogParser do
     end
   end
 
-  xcontext "empty file" do
+  context "empty file" do
     let(:tempfile) do
       Tempfile.new("csv").tap(&:close)
     end
