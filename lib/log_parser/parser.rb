@@ -12,6 +12,12 @@ module LogParser
     def call
       Database.load!
       Feeder.load!(path)
+
+      calculations = Counter.count("ip")
+      Presenter.print(calculations, "visits")
+
+      calculations = Counter.count("distinct(ip)")
+      Presenter.print(calculations, "unique views")
     rescue Error => e
       Logger.error e.message
     end

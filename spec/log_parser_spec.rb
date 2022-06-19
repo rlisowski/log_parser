@@ -28,7 +28,7 @@ RSpec.describe LogParser do
     end
   end
 
-  xcontext "valid log file" do
+  context "valid log file" do
     let(:tempfile) do
       Tempfile.new("csv").tap do |f|
         f.write("/help 1.1.1.1\n")
