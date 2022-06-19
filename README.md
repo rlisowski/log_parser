@@ -18,7 +18,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 #### From CLI 
 
-`bundle exec exe/log_parser ../webserver.log`
+`bundle exec exe/log_parser samples/webserver.log`
 
 ## Development
 
