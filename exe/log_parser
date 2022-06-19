@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "log_parser"
+
+unless LogParser::CLI.all_tasks.key?(ARGV[0]) || LogParser::CLI.instance_variable_get(:@map)&.key?(ARGV[0])
+  ARGV.unshift(LogParser::CLI.default_task)
+end
+
+LogParser::CLI.start(ARGV)
